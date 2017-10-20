@@ -1,3 +1,11 @@
+/* svg loading */
+
+svg path,
+svg rect {
+    fill: black;
+}
+
+
 /* animaciones */
 
 .animated {
