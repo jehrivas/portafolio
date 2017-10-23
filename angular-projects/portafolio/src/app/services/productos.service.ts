@@ -5,6 +5,7 @@ import { Http } from '@angular/http';
 export class ProductosService {
 
   productos: any [] = [];
+  // tslint:disable-next-line:no-inferrable-types
   cargando: boolean = true;
 
   constructor( private http: Http ) {
@@ -12,6 +13,10 @@ export class ProductosService {
     this.cargar_productos();
 
    }
+
+   public cargar_producto( cod: string ) {
+    return this.http.get(`https://paginaweb-94813.firebaseio.com/productos/${ cod }.json`);
+  }
 
 public cargar_productos() {
 
@@ -26,5 +31,6 @@ public cargar_productos() {
     });
 
   }
+
 
 }
